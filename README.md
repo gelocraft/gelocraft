@@ -4,6 +4,6 @@
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=gelocraft&show_icons=true&count_private=true&theme=onedark&hide_border=true&hide=issues,contribs&bg_color=00000000">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gelocraft&layout=compact&hide_border=true&theme=onedark&bg_color=00000000&langs_count=6&hide=html,css,javascript,solidity,typescript,svelte,python">
+  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=anuraghazra&layout=compact&langs_count=4&disable_animations=true&theme=onedark&hide=html,css,javascript,solidity,typescript,svelte,python">
   <img src ="https://github-readme-streak-stats.herokuapp.com?user=gelocraft&theme=onedark&hide_border=true&background=FFFFFF00">
 </p>
