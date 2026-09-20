@@ -34,7 +34,7 @@ And this is where we look at the second option: **CDNs**.
 
 
 
-Content Delivery Network (CDN)
+## Content Delivery Network (CDN)
 
 If you're building a static website or a SPA, just use a CDN.
 
