@@ -1,0 +1,11 @@
+{{ if or .Next .Prev }}
+<div>
+  {{ with .Next }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
+
+  {{ with .Prev }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,13 @@
+baseURL = 'https://gelocraft.dev/'
+locale = 'en-us'
+title = 'gelocraft.dev'
+
+[markup]
+    [markup.highlight]
+        style = 'catppuccin-latte'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10

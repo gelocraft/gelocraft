@@ -1,0 +1,9 @@
+<h2>Recent Blogs</h2>
+<ul>
+  {{ range where site.RegularPages "Section" "blogs" | first 4 }}
+    <li>
+      {{ .Date.Format "02 Jan 2006" }} - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    </li>
+  {{ end }}
+</ul>
+<a href="/blogs/">see all blogs.</a>
