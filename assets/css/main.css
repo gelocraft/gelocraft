@@ -16,16 +16,33 @@ body {
   background: #fff;
 }
 
-header nav,
-main,
-footer {
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  flex: 1;
   width: min(100% - 2rem, 45rem);
   margin-inline: auto;
+  overflow-wrap: anywhere;
 }
 
 header {
+  flex-shrink: 0;
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+header nav {
+  padding: 1rem 0;
+  width: min(100% - 2rem, 45rem);
+  margin-inline: auto;
 }
 
 nav ul {
@@ -66,6 +83,7 @@ a {
 }
 
 footer {
+  flex-shrink: 0;
   margin-top: auto;
   padding: 1.5rem 0;
   font-size: 0.85em;
