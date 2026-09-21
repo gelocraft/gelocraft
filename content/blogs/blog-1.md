@@ -54,31 +54,13 @@ It's a network of servers distributed across different locations around the worl
 
 Imagine your website is hosted in the United States, but your visitor is in the Philippines.
 
-Without a CDN:
-
-
-
-```
-Philippines ───────────────> United States
-             "Give me my website."
-
-Philippines <─────────────── United States
-             "Here you go."
-```
+Without a CDN, that visitor has to fetch the website directly from the server in the United States.
 
 With a CDN, the visitor can get a cached copy from a nearby edge server instead.
 
-
-
-```
-Philippines ───> CDN Edge Server
-                  │
-                  └── cached website
-```
-
 That's the main idea: put your content closer to your users.
 
-Why I prefer CDN for websites
+### Why I prefer CDN for websites
 
 The biggest advantage is that you don't have to manage a server.
 
@@ -94,11 +76,11 @@ The CDN distributes it.
 
 That's it.
 
-And static websites are basically the perfect workload for this.
+Static websites are basically the perfect workload for this.
 
 If your website is just HTML, CSS, JavaScript, images, and fonts, there's very little reason to rent an entire virtual machine just to serve those files.
 
-What about SPAs and SSR?
+### What about SPAs and SSR?
 
 CDNs are also great for Single Page Applications. A production React, Vue, Svelte, Angular, or vanilla JavaScript application usually ends up as a collection of static files, which is exactly what a CDN is good at serving.
 
@@ -106,9 +88,9 @@ But SSR (Server-Side Rendering) is a different story. SSR requires code to run o
 
 Traditional CDNs can't do that by themselves, but many modern CDN providers now offer edge computing, allowing you to run certain types of server-side code closer to your users.
 
-So CDNs aren't limited to static files anymore. However, once your application requires long-running processes, persistent connections, heavy computation, or a traditional backend, a VPS or another server-based solution may make more sense.
+Once your application requires long-running processes, persistent connections, heavy computation, or a traditional backend, a VPS or another server-based solution may make more sense.
 
-What about cost?
+### What about cost?
 
 For small websites, CDNs can also be extremely cheap, and many providers offer generous free tiers.
 
@@ -116,30 +98,7 @@ You're not paying for an entire computer sitting around 24/7 just to serve a few
 
 Of course, always check the provider's bandwidth limits and pricing. Free doesn't mean unlimited.
 
-So, should you use a VPS?
-
-If you're building a portfolio, landing page, blog, documentation site, or SPA?
-
-Use the CDN.
-
-You don't need Kubernetes to serve your portfolio.
-
-You don't need a 32-core server to host a landing page.
-
-And you definitely don't need to spend your weekend configuring Nginx when all you wanted to do was put a website on the internet.
-
-No SSH.
-
-No "systemctl restart nginx".
-
-No staring at "htop" wondering why something is using 900% CPU.
-
-Just:
-
-Build → Deploy → CDN → Users.
-
-For a static website, that's exactly how it should be.
-
+And last but not least, let's talk about serverless.
 
 ---
 ## Serverless
