@@ -2,6 +2,9 @@
 name: Deploy Website
 
 on:
+  push:
+    paths:
+      - 'content/**'
   workflow_dispatch:
 
 permissions:
