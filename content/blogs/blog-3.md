@@ -9,6 +9,10 @@ I've been writing more Go lately, and I've found myself
 appreciating some of its features more and more.
 Here are five features that have made Go particularly enjoyable for me.
 
+{{< tableofcontents >}}
+
+---
+
 ## 1. The "defer" keyword
 
 "defer" is probably one of those features that becomes more useful the more Go you write.

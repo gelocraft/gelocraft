@@ -31,6 +31,8 @@ This is why backend applications should explicitly handle operating system signa
 
 **Spoiler alert:** this is what graceful shutdown is for.
 
+{{< tableofcontents >}}
+
 ---
 ## What is a signal?
 

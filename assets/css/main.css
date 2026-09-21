@@ -189,3 +189,55 @@ span#reading-time {
     max-width: 100%;
   }
 }
+
+/* ===== Table of Contents styling ===== */
+
+#TableOfContents {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 2rem;
+}
+
+#TableOfContents ul {
+  display: block;
+  list-style: none;
+  padding-left: 1.2em;
+  margin: 0;
+  line-height: 1.4;
+}
+
+#TableOfContents ul ul {
+  display: block;
+  padding-left: 1.5em;
+}
+
+#TableOfContents li {
+  display: list-item;
+  position: relative;
+  padding-left: 1em;
+  margin: 0.1em;
+}
+
+#TableOfContents li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: currentColor;
+}
+
+#TableOfContents a {
+  display: inline;
+  text-decoration: underline;
+  color: #0969da;
+}
+
+#TableOfContents a:hover {
+  opacity: 0.7;
+}
+
+h1,
+h2,
+h3 {
+  scroll-margin-top: 5rem; /* adjust to match your header's actual height */
+}

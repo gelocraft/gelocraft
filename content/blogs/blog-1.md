@@ -9,6 +9,10 @@ So, you’ve built your first-ever website or frontend app, but you don’t know
 
 In this article, I’m going to go over the different options available for hosting your website, discuss the downsides of each option, and explain why you might choose one over another.  
 
+{{< tableofcontents >}}
+
+---
+
 ## Virtual Private Server (VPS)
 
 For the past few years, a VPS has been the traditional option for hosting a website. You build a website and serve its files over the internet using popular web servers like Apache or Nginx. Even today, as I’m writing this article, lots of company websites on the internet are still running on VPS. And yes, I’ve mentioned VPS multiple times without actually explaining what it is.

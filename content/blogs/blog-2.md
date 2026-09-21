@@ -14,6 +14,9 @@ In 2026, my answer is different:
 
 I like SQLite because it gives me what I need from a relational database without making me run another server.
 
+{{< tableofcontents >}}
+
+---
 ## SQLite doesn't need a server
 
 With PostgreSQL or MySQL, my application talks to a separate database server.
