@@ -9,7 +9,7 @@ title = 'Home'
 
 {{< recentblogs >}}
 
-## Who is this guy? — The first thing you might ask.
+## Who is this guy? — the first thing you might ask.
 
 I'm a software developer who goes by the name gelocraft as my online handle.
 I spend my free time doing recreational programming, where I build things
