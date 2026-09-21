@@ -14,7 +14,6 @@ Here are five features that have made Go particularly enjoyable for me.
 "defer" is probably one of those features that becomes more useful the more Go you write.
 
 For example:
-
 ```go
 file, err := os.Open("data.txt")
 defer file.Close()
@@ -33,7 +32,6 @@ It's a small feature, but it makes code easier to follow.
 ## 2. Interfaces
 
 Go's interfaces are interesting because they're implemented implicitly.
-
 ```go
 type Writer interface {
     Write([]byte) (int, error)
@@ -52,7 +50,6 @@ It also makes testing pretty straightforward. If my function only needs somethin
 Concurrency is another area where Go feels particularly nice.
 
 Starting concurrent work can be as simple as:
-
 ```go
 go doSomething()
 ```
@@ -69,13 +66,11 @@ For backend applications, where I/O and concurrent requests are common, this is 
 Go's standard library is probably one of the biggest reasons I enjoy working with the language.
 
 Need an HTTP server?
-
 ```go
 http.ListenAndServe(":8080", handler)
 ```
 
 Need JSON?
-
 ```go
 json.Marshal(data)
 json.Unmarshal(data, &data)
@@ -93,7 +88,6 @@ That makes starting a new project feel refreshingly straightforward.
 The Go testing tools are another thing I appreciate.
 
 A basic test looks like this:
-
 ```go
 func TestAdd(t *testing.T) {
     got := Add(2, 3)
@@ -105,7 +99,6 @@ func TestAdd(t *testing.T) {
 ```
 
 Then I can run:
-
 ```sh
 go test ./...
 ```
