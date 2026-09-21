@@ -2,6 +2,8 @@ baseURL = 'https://gelocraft.dev/'
 locale = 'en-us'
 title = 'gelocraft.dev'
 
+timezone = "Asia/Manila"
+
 [markup]
     [markup.highlight]
         style = 'catppuccin-latte'
