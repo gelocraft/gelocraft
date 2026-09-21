@@ -49,20 +49,19 @@ I don't have to treat SQLite as something I use temporarily before moving to a "
 SQLite is the real database.
 
 ---
-
 ## Introducing Turso
 
-Turso is built on libSQL, an open-source fork of SQLite. It gives me a way to use the SQLite ecosystem in production without having to manage the database infrastructure myself.
+Turso is a distributed database built on libSQL, an open-source fork of SQLite. The interesting part is that it keeps the SQLite model while allowing the database to run across multiple locations.
 
-I can start with a local SQLite database and use Turso when I deploy my application.
+Instead of having one SQLite file sitting on the same server as my application, Turso can distribute database replicas to different locations. My application can connect to a nearby replica, which makes SQLite much more practical for applications that need to serve users from different regions.
 
-What I also like about Turso is its approach to scaling.
+This is also what makes the idea of using SQLite in production much more realistic. SQLite itself is excellent for many applications, but a single database file on a single machine isn't designed for the kind of distribution you might need as an application grows. Turso extends that model by distributing the database while keeping the SQLite-compatible ecosystem and workflow.
 
-With a traditional SQL server, scaling a database can eventually involve things like read replicas, replication, failover, connection pooling, backups, and monitoring.
+Compare that with running PostgreSQL yourself. As the application grows, scaling a traditional SQL server can become a much bigger infrastructure problem. You may eventually need read replicas, replication, connection pooling, failover, backups, monitoring, and strategies for handling database migrations and high availability.
 
-PostgreSQL and MySQL can absolutely handle large workloads. But once you're running them yourself, you're also responsible for managing the database infrastructure.
+PostgreSQL and MySQL are extremely capable databases, but operating them at scale involves managing all of that infrastructure.
 
-With Turso, I can use SQLite locally and still use the same SQLite-based approach in production without having to manage the database server myself.
+Turso takes a different approach: keep the simplicity and familiarity of SQLite, but distribute the database so it can be used in production across multiple locations.
 
 ---
 
