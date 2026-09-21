@@ -4,6 +4,7 @@ draft = false
 title = 'Where should I host my website? — VPS, CDN, Serverless'
 +++
 
+---
 So, you’ve built your first-ever website or frontend app, but you don’t know where to host it? Good news—you’ve come to the right place.
 
 In this article, I’m going to go over the different options available for hosting your website, discuss the downsides of each option, and explain why you might choose one over another.  
@@ -34,6 +35,7 @@ And this is where we look at the second option: **CDNs**.
 
 
 
+---
 ## Content Delivery Network (CDN)
 
 If you're building a static website or a SPA, just use a CDN.
@@ -139,6 +141,7 @@ Build → Deploy → CDN → Users.
 For a static website, that's exactly how it should be.
 
 
+---
 ## Serverless
 
 The name "serverless" is probably one of the most misleading names in software engineering.
