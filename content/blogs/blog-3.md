@@ -1,7 +1,7 @@
 +++
 date = '2026-09-21T08:21:01Z'
 draft = false
-title = 'Five Features of Go That I Like and Appreciate'
+title = 'Five features of Go that I like and appreciate'
 +++
 
 ---
