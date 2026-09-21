@@ -3,8 +3,8 @@
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <p>{{ .ReadingTime }} minute read.</p>
   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <span id="reading-time">{{ .ReadingTime }} minute read.</span>
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}

@@ -95,3 +95,40 @@ footer {
   border-top: 1px solid #eee;
   text-align: center;
 }
+
+main {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+}
+
+time,
+span#reading-time {
+  font-size: 1rem;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+}
+
+span#reading-time {
+  margin-left: 1rem;
+  font-style: italic;
+}
