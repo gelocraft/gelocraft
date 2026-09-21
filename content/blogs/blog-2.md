@@ -8,7 +8,7 @@ title = 'Why I choose SQLite as my default relational database in 2026 — featu
 ---
 If you asked me a few years ago what database I'd choose for a new application, I probably would've said PostgreSQL.
 
-In 2026, my default is different:
+In 2026, my answer is different:
 
 **SQLite.**
 
