@@ -35,7 +35,7 @@ main {
 
 header {
   flex-shrink: 0;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   background: #fff;
   position: sticky;
@@ -44,7 +44,7 @@ header {
 }
 
 header nav {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   width: min(100% - 2rem, 45rem);
   margin-inline: auto;
 }
@@ -89,7 +89,7 @@ a {
 footer {
   flex-shrink: 0;
   margin-top: auto;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   font-size: 0.85em;
   color: #666;
   border-top: 1px solid #eee;
