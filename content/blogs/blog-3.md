@@ -113,3 +113,5 @@ go test ./...
 Testing is treated as part of the normal Go development workflow rather than something that requires another framework before I can get started.
 
 I also like that the same tooling is used across Go projects, so moving between repositories doesn't usually mean learning a completely different testing setup.
+
+{{< nextprev >}}

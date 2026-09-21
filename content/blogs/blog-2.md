@@ -122,3 +122,5 @@ Just SQL and Go.
 Simple, explicit, and boring.
 
 And honestly, boring is good.
+
+{{< nextprev >}}

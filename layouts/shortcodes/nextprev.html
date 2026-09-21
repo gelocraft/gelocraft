@@ -1,11 +1,17 @@
-{{ if or .Next .Prev }}
-<div>
-  {{ with .Next }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+<nav class="nextprev" aria-label="Post navigation">
+  {{ with .Page.PrevInSection }}
+    <a class="nextprev-link nextprev-prev" href="{{ .RelPermalink }}" rel="prev">
+      <span class="nextprev-label">← Previous</span>
+      <span class="nextprev-title">{{ .Title }}</span>
+    </a>
+  {{ else }}
+    <span></span>
   {{ end }}
 
-  {{ with .Prev }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ with .Page.NextInSection }}
+    <a class="nextprev-link nextprev-next" href="{{ .RelPermalink }}" rel="next">
+      <span class="nextprev-label">Next →</span>
+      <span class="nextprev-title">{{ .Title }}</span>
+    </a>
   {{ end }}
-</div>
-{{ end }}
+</nav>
