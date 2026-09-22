@@ -18,13 +18,13 @@ Here are five features that have made Go particularly enjoyable for me.
 "defer" is probably one of those features that becomes more useful the more Go you write.
 
 For example:
-```go
+{{< highlight go "hl_lines=1 3-5" >}}
 file, err := os.Open("data.txt")
 defer file.Close()
 if err != nil {
     return err
 }
-```
+{{< /highlight >}}
 
 I can handle the cleanup immediately after opening the resource instead of having to remember to do it somewhere else in the function.
 
