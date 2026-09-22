@@ -231,3 +231,5 @@ Once you start thinking about your backend this way, graceful shutdown becomes m
 You're simply giving your application a chance to clean up before the process disappears.
 
 And that's a much better way to stop a backend application than simply pulling the plug.
+
+{{< nextprev >}}
