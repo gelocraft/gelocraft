@@ -1,0 +1,10 @@
+{{- $text := .Get "text" | default "Subscribe via RSS" -}}
+{{- $icon := .Get "icon" | default "true" -}}
+<a class="rss-link" href="{{ "index.xml" | absURL }}" target="_blank" rel="noopener">
+  {{- if eq $icon "true" -}}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;">
+    <path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36zM4 4.44v3.18c7.54 0 13.64 6.1 13.64 13.64h3.18C20.82 12.38 13.62 4.44 4 4.44zm0 7.27v3.18c3.74 0 6.76 3.02 6.76 6.76h3.18c0-5.51-4.43-9.94-9.94-9.94z"/>
+  </svg>
+  {{- end -}}
+  {{ $text }}
+</a>

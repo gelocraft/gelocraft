@@ -30,3 +30,5 @@ along with a list of personal projects I've built that you might also find inter
 **Disclaimer:** This is not a resume-driven website like the ones you might find
 on other developer personal websites, showcasing a self-proclaimed list of skills
 and tech frameworks they have — as if they were collecting Pokémon cards.
+
+{{< rss >}}
