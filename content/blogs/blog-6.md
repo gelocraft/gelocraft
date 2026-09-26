@@ -26,16 +26,19 @@ Host: example.com
 
 HTTP/2 is binary, split into frames and streams. A server can't just guess which one it's looking at based on the connection alone — it needs to know up front.
 
+---
 ## What ALPN Actually Does
 
 The client lists the protocols it supports (say, **h2** and **http/1.1**) inside the TLS ClientHello, and the server picks whichever one both sides can handle. This all happens before anything application-level gets exchanged, so by the time HTTP data starts flowing, both sides already agree on the format.
 
 One nuance worth knowing: the server can only pick from what the client offers. If a client only sends **http/1.1**, the server can't unilaterally decide to use HTTP/2, even if it supports it.
 
+---
 ## Why HTTP/2 Doesn't Need Its Own Port
 
 Without ALPN, you'd probably need separate ports — 443 for HTTP/1.1, something else for HTTP/2. Instead, the same port 443 can serve both, and ALPN sorts out which protocol to actually speak based on what the client offers. Older clients that only know HTTP/1.1 still work fine; they just never offer **h2**, so the server falls back automatically. Nothing breaks.
 
+---
 ## Seeing ALPN in Action (with OpenSSL)
 
 You can watch this negotiation happen yourself:
@@ -56,10 +59,12 @@ or
 ALPN protocol: http/1.1
 {{< /highlight >}}
 
+---
 ## ALPN and HTTP/3
 
 Same idea, different identifier: **h3**. HTTP/3 runs over QUIC instead of TCP, so the transport is different, but ALPN still handles protocol identification the same way. Good reminder that ALPN was never HTTP/2-specific — it's a general-purpose negotiation mechanism.
 
+---
 ## Why It Matters for Network Engineers
 
 If you work on reverse proxies, load balancers, or anything doing TLS termination, ALPN is a nice illustration of how cleanly the layers separate: TCP handles transport, TLS handles security, ALPN handles protocol negotiation, and HTTP/1.1 or HTTP/2 takes it from there. A proxy can even negotiate HTTP/2 with the browser while talking HTTP/1.1 to its backend — the two sides don't have to match.
