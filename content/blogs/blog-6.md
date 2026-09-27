@@ -1,5 +1,5 @@
 +++
-date = '2026-09-26T10:46:02Z'
+date = '2026-09-25T10:46:02Z'
 draft = false
 title = 'One Port, Many Protocols: How ALPN Makes HTTP/2 Possible'
 +++
@@ -65,7 +65,7 @@ ALPN protocol: http/1.1
 Same idea, different identifier: **h3**. HTTP/3 runs over QUIC instead of TCP, so the transport is different, but ALPN still handles protocol identification the same way. Good reminder that ALPN was never HTTP/2-specific — it's a general-purpose negotiation mechanism.
 
 ---
-## Why It Matters for Network Engineers
+## Why This Matters in Practice
 
 If you work on reverse proxies, load balancers, or anything doing TLS termination, ALPN is a nice illustration of how cleanly the layers separate: TCP handles transport, TLS handles security, ALPN handles protocol negotiation, and HTTP/1.1 or HTTP/2 takes it from there. A proxy can even negotiate HTTP/2 with the browser while talking HTTP/1.1 to its backend — the two sides don't have to match.
 
