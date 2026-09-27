@@ -14,7 +14,7 @@ We treat it like magic: type an address, tap enter, and a fully-formed webpage a
 
 Think of DNS like your phone's contacts app, except the "contact" is a website name and the "number" is an IP address. Computers don't actually know what "google.com" means — they just know numbers. DNS is the annoying middleman that translates "google.com" into something like `142.250.80.14`.
 
-Here's the lookup, step by step:
+Here's what DNS is doing behind the scenes:
 
 1. **Your browser checks its own memory first.** "Wait, have I looked this up recently?" If yes, done — like remembering a friend's number without opening your phone.
 
@@ -50,7 +50,7 @@ Picture two people meeting to make a deal:
 
 It's like a slightly awkward group handshake where everyone has to physically verify the other person's hand is real before the actual conversation starts.
 
-Once this three-step tango wraps up, both machines agree: *okay, we're talking now, packets will arrive in order, and nothing important gets lost along the way.* TCP is essentially the friend who triple-checks everyone RSVP'd before starting the group chat.
+Once this three-step tango wraps up, both machines agree: okay, we're talking now, packets will arrive in order, and nothing important gets lost along the way.
 
 ---
 ## 3. TLS Handshake
