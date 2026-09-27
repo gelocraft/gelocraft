@@ -13,3 +13,7 @@ timezone = "Asia/Manila"
     name = 'Home'
     pageRef = '/'
     weight = 10
+
+[permalinks]
+  blogs = "/blogs/:title/"
+
