@@ -24,30 +24,35 @@ With TLS passthrough, the proxy never decrypts anything. It receives the encrypt
 The routing decision usually relies on SNI (Server Name Indication), a field in the TLS handshake that tells the proxy which hostname the client wants. The hostname is visible, but the actual content of the conversation is not. The proxy knows where you're going, just not why you're going there, which is honestly how most of us prefer our relationships with infrastructure.
 
 ---
-## Why You Might Want It
-
-- **True end-to-end encryption.** Data stays encrypted from the client all the way to your application.
-- **Private keys stay put.** The certificate and key live only on the backend, not copied across every proxy like party invitations.
-- **Compliance.** Regulations like PCI DSS or HIPAA often push you to minimize where sensitive data is decrypted. Auditors love hearing "we don't decrypt it there."
-- **Mutual TLS.** If your backend needs to verify client certificates itself, passthrough lets the original handshake reach it intact.
-- **Simplicity for some workloads.** Databases, internal APIs, and non-HTTP protocols over TLS often work best when the proxy stays out of the way and lets the adults talk.
-
----
 ## The Trade-Offs
 
-Passthrough is not free. Because the proxy can't read the traffic, you lose a lot of Layer 7 features. Your proxy is now working blindfolded, and it can't do much beyond pointing in a general direction.
+TLS passthrough is not free. Because the proxy can't read the traffic, you lose a lot of Layer 7 features. Your proxy is now working blindfolded, and it can't do much beyond pointing in a general direction.
 
 - No path-based routing, header rewriting, or cookie-based session stickiness
 - No WAF inspection or content-based filtering at the proxy
 - Limited visibility into requests for logging and debugging (good luck asking the proxy what happened, it genuinely doesn't know)
 - Each backend has to manage its own certificates
 
-If you need those features, termination or re-encryption is the better fit. Many teams use both, with passthrough for sensitive services and termination for everything else.
+If you need those features, TLS termination or re-encryption is the better fit. Many teams use both, with TLS passthrough for sensitive services and TLS termination for everything else.
 
 ---
-## When to Choose TLS Passthrough
+## TLS Passthrough or TLS Termination, Which One to Choose?
 
-Choose TLS Passthrough when the backend must own the encryption, when compliance demands minimal decryption points, or when you're handling client certificates and non-HTTP traffic. Choose termination when you need smart routing, inspection, and centralized certificate management.
+Choose **TLS passthrough** when:
+
+- **The backend must own the encryption.** Your application should be the only place where traffic is decrypted.
+- **You need mutual TLS.** Your backend has to validate client certificates directly, so the original handshake must reach it intact.
+- **You handle non-HTTP traffic.** Databases, message brokers, and internal services running TLS work best when the proxy just passes the bytes along.
+- **You don't trust the middle.** If the proxy runs on shared or third-party infrastructure, keeping it blind to the content removes a major risk.
+
+Choose **TLS termination** when:
+
+- **You need smart routing.** Path-based routing, header rewriting, and cookie-based stickiness all require the proxy to read the request.
+- **You want inspection and filtering.** WAF rules and content-based security checks only work on decrypted traffic.
+- **You want centralized certificates.** Managing certificates in one place is easier than handling them on every backend.
+- **You need detailed logs and visibility.** Debugging and analytics are much simpler when the proxy can see full requests.
+
+If end-to-end encryption is your priority, go with TLS passthrough. If you need Layer 7 features, go with TLS termination. Many teams use both, with TLS passthrough for sensitive services and TLS termination for everything else.
 
 ---
 ## Why TLS Passthrough Is the Best Option for End to End Encryption
@@ -58,8 +63,10 @@ Think about what "end to end" actually means. It means that only the two parties
 
 Re-encryption does not fix this. It just wraps the data in a new layer after the proxy has already read it. That's like opening someone's letter, reading it, and then sealing it in a fresh envelope while saying "nothing to see here." The plain text still exists in the proxy's memory, and anyone who compromises that machine gets everything.
 
-Passthrough removes that weak point entirely. There is no decryption in the middle, so there is nothing to steal in the middle. A breached load balancer, a rogue administrator, or a misconfigured logging rule cannot expose what the proxy never had access to. The private key lives only on the backend, which shrinks your attack surface to a single, well-defended place instead of spreading it across every device in the path.
+TLS passthrough removes that weak point entirely. There is no decryption in the middle, so there is nothing to steal in the middle. A breached load balancer, a rogue administrator, or a misconfigured logging rule cannot expose what the proxy never had access to. The private key lives only on the backend, which shrinks your attack surface to a single, well-defended place instead of spreading it across every device in the path.
 
-It also keeps the trust model honest. With passthrough, the client is verifying the identity of the real application server, not an intermediary standing in its place. Certificate validation, client authentication, and cipher negotiation all happen between the two real endpoints, exactly as TLS was designed to work.
+It also keeps the trust model honest. With TLS passthrough, the client is verifying the identity of the real application server, not an intermediary standing in its place. Certificate validation, client authentication, and cipher negotiation all happen between the two real endpoints, exactly as TLS was designed to work.
 
-Other approaches ask you to trust the infrastructure between you and your users. Passthrough asks you to trust nothing in between, and that is what end-to-end encryption is supposed to mean. Your secrets stay secret, and your proxy gets to say, with total honesty, "I have no idea what's going on in there."
+Other approaches ask you to trust the infrastructure between you and your users. TLS passthrough asks you to trust nothing in between, and that is what end-to-end encryption is supposed to mean. Your secrets stay secret, and your proxy gets to say, with total honesty, "I have no idea what's going on in there."
+
+{{< nextprev >}}
