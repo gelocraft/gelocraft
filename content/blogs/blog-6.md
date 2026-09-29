@@ -44,7 +44,7 @@ Without ALPN, you'd probably need separate ports — 443 for HTTP/1.1, something
 You can watch this negotiation happen yourself:
 
 {{< highlight md "hl_lines=1" >}}
-openssl s_client -connect example.com:443 -alpn h2,http/1.1
+(sleep 1; echo) | openssl s_client -connect example.com:443 -servername example.com -alpn h2,http/1.1 2>&1 | grep ALPN
 {{< /highlight >}}
 
 The response tells you which protocol got selected:
