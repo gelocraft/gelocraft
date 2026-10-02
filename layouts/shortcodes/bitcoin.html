@@ -1,0 +1,26 @@
+<div onclick="copyBtcAddress()" class="bitcoin-donate">
+  <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+    <circle cx="16" cy="16" r="16" fill="#F7931A" />
+    <text
+      x="16"
+      y="23"
+      text-anchor="middle"
+      font-size="22"
+      font-weight="bold"
+      font-family="Arial, sans-serif"
+      fill="#fff"
+    >
+      ₿
+    </text>
+  </svg>
+  <strong>Bitcoin address:</strong>
+  <code id="btc-address">bc1q588y5x9t334gnmlp5ulpz4trdg4ve0jcdvs0lx</code>
+</div>
+
+<script>
+  function copyBtcAddress() {
+    navigator.clipboard.writeText(
+      document.getElementById("btc-address").textContent,
+    );
+  }
+</script>

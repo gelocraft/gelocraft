@@ -32,3 +32,8 @@ on other developer personal websites, showcasing a self-proclaimed list of skill
 and tech frameworks they have — as if they were collecting Pokémon cards.
 
 {{< rss >}}
+
+---
+
+{{< bitcoin >}}
+
